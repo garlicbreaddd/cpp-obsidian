@@ -1,11 +1,11 @@
 #include <vector>
 #include <windows.h>
-LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
+LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) { //mwindow handle, what type of message is being sent, wparam and lparam are message specific info(like width/height)
     switch (uMsg) {
-        case WM_DESTROY:
+        case WM_DESTROY: //if destroy message sent, destroy
             PostQuitMessage(0);
             return 0;
-        default:
+        default: //all other cases
             return DefWindowProc(hwnd, uMsg, wParam, lParam);
     }
 }
